@@ -1,0 +1,20 @@
+<h2>Movies in this list: <%= @movies.first.title %></h2>
+<!-- I want to show a list of movies in this list. Probably need a loop -->
+
+<h3>Add a film and bookmark to your list "<%= @list.name%>"</h3>
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment %>
+  <%= f.association :movie %> <!-- creates dropdown menu to choose a movie-->
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
+
+<h1><%= @list.name %></h1>
+
+<p><%= link_to 'New bookmark', new_list_bookmark_path(@list) %></p>
+
+<% @list.bookmarks.each do |bookmark| %>
+  <div class="card">
+    <%=bookmark.comment %> - <%= bookmark.movie.title %>
+    <p><%= link_to 'delete bookmark', bookmark_path(bookmark), data: { turbo_method: :delete }, class:"btn btn-success" %></p>
+  </div>
+<% end %>

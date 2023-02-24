@@ -1,0 +1,7 @@
+<h3>My lists</h3>
+
+<ul>
+  <% @lists.each do |list| %>
+    <div class="movie-card"><%= link_to list.name, list_path(list) %></div> <!--list means list.id-->
+  <% end %>
+</ul>
