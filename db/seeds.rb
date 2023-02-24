@@ -48,5 +48,5 @@ url = "http://tmdb.lewagon.com/movie/top_rated"
 end
 puts "Movies created"
 puts "Lists created."
-puts "Finished with #{movies.count} movies"
+puts "Finished with #{Movie.all.count} movies"
 # puts "Finished with #{lists.count} lists"

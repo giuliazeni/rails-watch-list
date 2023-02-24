@@ -1,3 +1,6 @@
+
+<%
+=begin %>
 <h2>Movies in this list: <%= @movies.first.title %></h2>
 <!-- I want to show a list of movies in this list. Probably need a loop -->
 
@@ -7,6 +10,8 @@
   <%= f.association :movie %> <!-- creates dropdown menu to choose a movie-->
   <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>
+<%
+=end%>
 
 <h1><%= @list.name %></h1>
 
